@@ -27,9 +27,9 @@
 
 ---
 
-> **Enhanced Fork** by [Yuxin Zhang](https://github.com/zyx312) (Jilin University / ZHUOYU Technology / DRIVEResearch)
+> **Enhanced Fork** by [Yuxin Zhang](https://github.com/zyx312) (Jilin University / ZHUOYU Technology / DRIVEResearch) and [Sheng Zhang](https://github.com/JiuBrother) (Horizon Robotics)
 >
-> This fork adds **China automotive standards compliance** (GB L2/L3/Parking mandatory standards), **deep SOTIF practice** (hazard scenario construction, audit, highway testing, scenario-driven V&V), and **end-to-end AD safety analysis** (E2E safety architecture, DFM benchmarking). See [README_CN.md](README_CN.md) for full details in Chinese.
+> This fork adds **China automotive standards compliance** (GB L2/L3/Parking mandatory standards), **deep SOTIF practice** (hazard scenario construction, audit, highway testing, scenario-driven V&V), **end-to-end AD safety analysis** (E2E safety architecture, DFM benchmarking), and **ASPICE 4.0 full coverage** (SYS, SWE, HWE, MLE, VAL, SUP, MAN process groups with dedicated agents and knowledge base). See [README_CN.md](README_CN.md) for full details in Chinese.
 
 ---
 
@@ -98,12 +98,12 @@ claude "Review this C function for ISO 26262 ASIL-D compliance"
 | Component | Count | Location (`~/.claude/`) | Description |
 |-----------|------:|------------------------|-------------|
 | **Skills** | 75+ categories | `skills/automotive-*/` | Deep domain knowledge with implementation patterns |
-| **Agents** | 39 | `agents/automotive-*.md` | Specialized AI personas (safety engineer, ADAS architect...) |
+| **Agents** | 61 | `agents/automotive-*.md` | Specialized AI personas (safety engineer, ADAS architect, ASPICE 4.0 roles...) |
 | **Commands** | 33 | `commands/automotive/` | One-shot slash commands (`/automotive <cmd>`) |
 | **Workflows** | 26 | `automotive-workflows/` | End-to-end development processes |
 | **Rules** | 31 | `rules/automotive-*.md` | MISRA, AUTOSAR, ISO 26262 coding standards |
 | **Hooks** | 24 | `hooks/automotive-*.sh` | Pre-commit safety and quality gates |
-| **Knowledge Base** | 115 docs | `knowledge-base/automotive/` | Standards reference library |
+| **Knowledge Base** | 125 docs | `knowledge-base/automotive/` | Standards reference library (ASPICE 3.1/4.0, ISO 26262...) |
 
 ### How It Integrates
 
@@ -149,6 +149,7 @@ Your Existing Workspace          +  Automotive Extension
 | MISRA C:2012 | All rules | Violation detection, deviation templates, CI gates |
 | MISRA C++:2023 | Key rules | Modern C++ safety subset, ASIL-specific restrictions |
 | ASPICE v3.1 | SWE.1-6 | Process templates, work products, traceability |
+| ASPICE 4.0 | Full coverage | SYS/SWE/HWE/MLE/VAL/SUP/MAN agents, ML & hardware processes, knowledge base |
 
 ---
 

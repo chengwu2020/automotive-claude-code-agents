@@ -2,14 +2,20 @@
 
 Automotive SPICE (Software Process Improvement and Capability dEtermination) is the de facto standard for assessing software development processes in the automotive industry. This guide focuses on developer-facing process requirements.
 
+> **Note**: This document covers ASPICE 4.0. Key changes from ASPICE 3.1 include new MLE (Machine Learning Engineering) and HWE (Hardware Engineering) process groups, and terminology change from "Testing" to "Verification". See the [ASPICE 4.0 Changes](../../knowledge-base/standards/aspice/6-aspice40-changes.md) document for complete details.
+
 ## ASPICE Overview
 
-ASPICE evaluates process capability on a 6-level scale (0-5) across three process categories:
-- Primary Life Cycle Processes (ACQ, SPL, SYS, SWE, MAN)
+ASPICE evaluates process capability on a 6-level scale (0-5) across multiple process categories:
+
+- Primary Life Cycle Processes (ACQ, SPL, SYS, SWE, MLE, HWE)
 - Supporting Life Cycle Processes (SUP)
-- Organizational Life Cycle Processes (ORG)
+- Organizational Life Cycle Processes (ORG, MAN, PIM)
+- Validation Process (VAL)
+- Reuse Process (REU)
 
 Target capability levels vary by OEM:
+
 - Tier 1 suppliers: Capability Level 2 (Managed) or Level 3 (Established) typical
 - Critical safety systems: Level 3 required
 - Advanced projects: Level 4+ (Predictable/Optimizing)
@@ -602,9 +608,9 @@ Build: v2.3.0-rc1
 | 13-20 | Software Unit Test Report |
 | 13-22 | Traceability Record (Test to Requirement) |
 
-### SWE.5: Software Integration and Integration Test
+### SWE.5: Software Integration and Integration Verification
 
-**Purpose**: Integrate software units and test the integrated software.
+**Purpose**: Integrate software units and verify the integrated software.
 
 #### Base Practices
 
@@ -739,13 +745,13 @@ python scripts/parse_integration_results.py integration_report.xml
 | 13-19 | Software Integration Test Report |
 | 17-08 | Integrated Software |
 
-### SWE.6: Software Qualification Test
+### SWE.6: Software Qualification Verification
 
-**Purpose**: Test integrated software against software requirements.
+**Purpose**: Verify integrated software against software requirements.
 
 #### Base Practices
 
-BP1: Develop software qualification test strategy
+BP1: Develop software qualification verification strategy
 ```yaml
 # qualification_test_strategy.yaml
 purpose: "Verify integrated software meets all software requirements"
@@ -1117,7 +1123,48 @@ Examples:
 
 ## References
 
-- Automotive SPICE Process Assessment Model (PAM) v3.1
-- Automotive SPICE Process Reference Model (PRM) v3.1
-- VDA Scope for Automotive SPICE v3.2
+- Automotive SPICE Process Assessment Model (PAM) v4.0
+- Automotive SPICE Process Reference Model (PRM) v4.0
 - ISO/IEC 33001-33099: Software process assessment standards
+- [ASPICE 4.0 Changes](../../knowledge-base/standards/aspice/6-aspice40-changes.md) - Detailed change log from 3.1 to 4.0
+
+---
+
+## ASPICE 4.0 New Process Groups *(Brief Overview)*
+
+### MLE: Machine Learning Engineering
+
+ASPICE 4.0 introduces MLE processes for ML-based automotive functions:
+
+| Process | Purpose |
+|---------|---------|
+| MLE.1 | Machine Learning Requirements Analysis |
+| MLE.2 | Machine Learning Architecture |
+| MLE.3 | Machine Learning Training |
+| MLE.4 | Machine Learning Model Verification |
+
+Key concepts: ODD (Operational Design Domain), hyperparameters, ML data management.
+
+### HWE: Hardware Engineering
+
+ASPICE 4.0 introduces HWE processes for hardware-software co-development:
+
+| Process | Purpose |
+|---------|---------|
+| HWE.1 | Hardware Requirements Analysis |
+| HWE.2 | Hardware Design |
+| HWE.3 | Hardware Design Verification |
+| HWE.4 | Hardware Requirements Verification |
+
+### Other New Processes
+
+| Process | Purpose |
+|---------|---------|
+| VAL.1 | Validation (user acceptance) |
+| SUP.11 | ML Data Management |
+| MAN.5 | Risk Management |
+| MAN.6 | Measurement |
+| PIM.3 | Process Improvement |
+| REU.2 | Reuse Product Management |
+
+For detailed implementation guidance on new processes, see [knowledge-base/standards/aspice/2-conceptual.md](../../knowledge-base/standards/aspice/2-conceptual.md).
